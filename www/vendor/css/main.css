@@ -8,8 +8,15 @@ input[type="submit"] {
     transition: all .4s ease;
 }
 .navbar { position: relative; display: table; width: 100%; background: #0096C9; border: 0; }
-.navbar a.back-button { color: #fff; font-weight: 400; padding: 4px 0px 4px 16px; }
-.navbar a.back-button:before { border-color: #fff; }
+.navbar a.back-button { color: #fff; font-weight: 400; padding: 4px 0px 4px 25px; }
+.navbar a.back-button:before {
+    border-color: #fff; border: 0; background: url(../img/home.png) 0 0 no-repeat; background-size: cover; width: 20px; height: 18px;  left: 0; top: 5px; margin-top: 0;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
 .navbar h6.label { color: #fff; }
 .navbar .icon-menu.icon-menu:after { border-top: 10px double #fff; border-bottom: 3px solid #fff; }
 .wrapper { padding: 0 10px; }
