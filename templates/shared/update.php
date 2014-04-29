@@ -1,5 +1,5 @@
 <?php
-use \ROH\Theme\V2Theme\Helper\Form;
+use \Xinix\Theme\NakedTheme\Helper\Form;
 ?>
 
 <script type="text/javascript">
