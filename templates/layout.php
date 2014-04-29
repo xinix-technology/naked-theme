@@ -21,7 +21,7 @@
                     <a class="back-button" href="<?php echo URL::base() ?>">Home</a>
                 </div>
                 <div class="span-8">
-                    <h6 class="label">Account</h6>
+                    <h6 class="label"><?php echo f('about', 'title') ?></h6>
                 </div>
                 <div class="span-2">
                     &nbsp;
