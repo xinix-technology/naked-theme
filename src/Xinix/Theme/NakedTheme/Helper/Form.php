@@ -1,6 +1,6 @@
 <?php
 
-namespace ROH\Theme\V2Theme\Helper;
+namespace Xinix\Theme\NakedTheme\Helper;
 
 class Form {
 

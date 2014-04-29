@@ -1,16 +1,16 @@
 {
-    "name": "reekoheek/v2-theme",
-    "description": "V2 theme",
+    "name": "xinix-technology/naked-theme",
+    "description": "Naked theme",
     "license": "MIT",
     "authors": [
         {
-            "name": "Ganesha",
-            "email": "reekoheek@gmail.com"
+            "name": "Muhammad Ali",
+            "email": "muhammadali.alaydrus@gmail.com"
         }
     ],
     "autoload": {
         "psr-0": {
-            "ROH\\Theme\\V2Theme": "src"
+            "Xinix\\Theme\\NakedTheme": "src"
         }
     }
 }
