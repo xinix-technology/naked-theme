@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>X-Navbar</title>
+
+<style>
+
+x-navbar {
+    position: relative;
+}
+
+x-navbar .left-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+x-navbar ^ .left-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+x-navbar .right-item {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+x-navbar ^ .right-item {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+x-navbar label {
+    text-align: center;
+    display: block;
+    line-height: 2.5rem;
+}
+
+x-navbar ^ label {
+    text-align: center;
+    display: block;
+    line-height: 2.5rem;
+}
+
+</style>
+
+<script type="text/javascript">
+(function() {
+    "use strict";
+
+    var currentScript = document.currentScript || document._currentScript;
+    var ownerDocument = document.currentScript.ownerDocument;
+
+    var XNavbarProto = Object.create(HTMLElement.prototype);
+
+    XNavbarProto.createdCallback = function() {
+        this.host = this.createShadowRoot();
+
+        $(this).find('a').addClass('button');
+
+        var $content = $('<div class="left-item"><content select=".left"></content></div><content select="label"></content><div class="right-item"><content select=".right"></content></div>');
+
+        $(this.host).append($content);
+
+    };
+
+    document.registerElement('x-navbar', {
+        prototype: XNavbarProto
+    });
+})();
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

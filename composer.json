@@ -1,0 +1,16 @@
+{
+    "name": "reekoheek/v2-theme",
+    "description": "V2 theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ganesha",
+            "email": "reekoheek@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "ROH\\Theme\\V2Theme": "src"
+        }
+    }
+}
