@@ -24,7 +24,7 @@
                     <h6 class="label">Account</h6>
                 </div>
                 <div class="span-2">
-                    &nbsp
+                    &nbsp;
                 </div>
             </div>
         </nav>
