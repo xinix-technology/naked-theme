@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>X NestedList</title>
+
+<script type="text/javascript">
+(function() {
+    "use strict";
+
+    var currentScript = document.currentScript || document._currentScript;
+    var ownerDocument = document.currentScript.ownerDocument;
+
+    var template = function(templateString, data) {
+        var result = templateString;
+        for(var i in data) {
+            var regex = new RegExp('{{\\s*' + i.replace('$', '\\$') + '\\s*}}', 'g');
+            result = result.replace(regex, data[i] || '');
+        }
+        return result;
+    };
+
+    var XNestedListProto = Object.create(HTMLElement.prototype);
+
+    XNestedListProto.attributeChangedCallback = function(attrName) {
+        if (attrName === 'src') {
+            this.src = this.getAttribute('src');
+            this.populate();
+        } else if (attrName === 'parent') {
+            this.parent = this.getAttribute('parent');
+            this.populate();
+        }
+    };
+
+    XNestedListProto.createdCallback = function() {
+        var that = this;
+        this.topTemplateString = '<li><a href="#goto">&lt;TOP&gt;</a></li>';
+        this.templateString = this.innerHTML.trim() || '<li><a href="#goto">{{ self }}</a></li>';
+
+        this.root = this;//this.createShadowRoot();
+        this.src = this.getAttribute('src');
+        this.parent = this.getAttribute('parent') || '';
+
+        $(this.root).on('click', 'a[href="#goto"]', function(evt) {
+            return that.goTo(evt);
+        });
+
+        this.populate();
+    };
+
+    XNestedListProto.populate = function() {
+        var $list = $('<ul class="listview"></ul>'),
+            that = this,
+            $li;
+
+        $.ajax({
+            url: this.src + '?parent=' + this.parent
+        }).done(function(data) {
+            if (data && data.entries) {
+                $li = $(template(that.topTemplateString));
+                $li.attr('data-id', '');
+                $list.append($li);
+
+                for(var i in data.entries) {
+                    var entry = data.entries[i];
+                    $li = $(template(that.templateString, entry));
+                    $li.attr('data-id', entry.$id);
+                    $list.append($li);
+                }
+            }
+        });
+
+        $(this.root).html($list);
+    };
+
+    XNestedListProto.goTo = function(evt) {
+
+        evt.preventDefault();
+        var $li = $(evt.target).parents('li');
+
+        this.setAttribute('parent', $li.attr('data-id'));
+
+        return false;
+    };
+
+    document.registerElement('x-nestedlist', {
+        prototype: XNestedListProto
+    });
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>
