@@ -15,7 +15,7 @@ use \Xinix\Theme\NakedTheme\Helper\Form;
                 <div class="row">
                     <ul class="flat">
                         <li>
-                            <a href="<?php echo f('controller.url', '/') ?>" class="button">Back</a>
+                            <a href="<?php echo @$_GET['continue'] ?: f('controller.url') ?>" class="button">Back</a>
                         </li>
                         <li>
                             <a href="<?php echo f('controller.url', '/'.$entry['$id'].'/update') ?>" class="button">Update</a>
@@ -27,9 +27,9 @@ use \Xinix\Theme\NakedTheme\Helper\Form;
                 </div>
             </div>
         </div>
-        <form method="POST">
+        <!-- <form method="POST"> -->
             <?php echo Form::create()->of($entry)->show(array( 'readonly' => true )) ?>
-            <div class="row button-form">
+            <!-- <div class="row button-form">
                 <div class="span-12">
                     <div class="row">
                         <ul class="flat">
@@ -39,7 +39,7 @@ use \Xinix\Theme\NakedTheme\Helper\Form;
                         </ul>
                     </div>
                 </div>
-            </div>
-        </form>
+            </div> -->
+        <!-- </form> -->
     </div>
 </div>

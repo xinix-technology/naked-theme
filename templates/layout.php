@@ -38,21 +38,6 @@
                 <?php echo $body ?>
             </div>
         </div>
-        <?php // if (isset($flash[ 'error']) || isset($flash[ 'info'])): ?>
-        <!-- <div class="row alert-row">
-            <?php if (isset($flash[ 'error'])): ?>
-            <div class="alert error">
-                <?php echo $flash[ 'error']; ?>
-            </div>
-            <?php endif ?>
-            <?php if (isset($flash[ 'info'])): ?>
-            <div class="alert success">
-                <?php echo $flash[ 'info']; ?>
-            </div>
-            <?php endif ?>
-        </div> -->
-        <?php // endif ?>
-
     </main>
 </body>
 </html>
