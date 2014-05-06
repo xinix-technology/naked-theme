@@ -2,17 +2,20 @@
 
 namespace Xinix\Theme\NakedTheme\Helper;
 
-class Form {
+class Form
+{
 
     protected $schema;
 
     protected $data;
 
-    public static function create($arg = null) {
+    public static function create($arg = null)
+    {
         return new static($arg);
     }
 
-    public function __construct($arg = null) {
+    public function __construct($arg = null)
+    {
 
         if (is_array($arg)) {
             $this->schema = $arg;
@@ -24,12 +27,14 @@ class Form {
         $this->data = \App::getInstance()->request->post();
     }
 
-    public function of($data) {
+    public function of($data)
+    {
         $this->data = $data;
         return $this;
     }
 
-    public function show($options = array()) {
+    public function show($options = array())
+    {
         $options = array_merge(array( 'readonly' => false ), $options);
 
         $html = '';
@@ -38,7 +43,7 @@ class Form {
             $html .= '<div class="row field field-'.$key.'">'."\n";
             $html .= '<div class="span-12">'."\n";
             // $html .= '<div class="wrapper">'."\n";
-            // $html .= $this->label($key);
+            $html .= $this->label($key);
             $html .= $options['readonly'] ? $this->readonly($key) : $this->input($key);
             // $html .= '</div>'."\n\n";
             $html .= '</div>'."\n\n";
@@ -48,15 +53,18 @@ class Form {
         return $html;
     }
 
-    public function label($key) {
+    public function label($key)
+    {
         return $this->schema[$key]->label()."\n";
     }
 
-    public function input($key) {
+    public function input($key)
+    {
         return $this->schema[$key]->input(@$this->data[$key])."\n";
     }
 
-    public function readonly($key) {
+    public function readonly($key)
+    {
         return $this->schema[$key]->set('readonly', true)->input(@$this->data[$key])."\n";
     }
 }

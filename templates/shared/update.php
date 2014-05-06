@@ -9,32 +9,19 @@ use \Xinix\Theme\NakedTheme\Helper\Form;
 </script>
 <div class="listing">
     <div class="wrapper">
-        <?php if ($_POST): ?>
-            <h4><?php echo f('controller.name') ?>: Update</h4>
-            <div class="row button-form">
-                <div class="span-12">
-                    <div class="row">
-                        <ul class="flat">
-                            <li>
-                                <a href="<?php echo f('controller.url') ?>" class="button">Back</a>
-                            </li>
-                        </ul>
-                    </div>
+        <h4><?php echo f('controller.name') ?>: Update</h4>
+        <div class="row button-form">
+            <div class="span-12">
+                <div class="row">
+                    <ul class="flat">
+                        <li>
+                            <a href="<?php echo f('controller.url') ?>" class="button">Back</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        <?php else: ?>
-            <h4><?php echo f('controller.name') ?>: Update</h4>
-            <div class="row button-form">
-                <div class="span-12">
-                    <div class="row">
-                        <ul class="flat">
-                            <li>
-                                <a href="<?php echo f('controller.url', '/') ?>" class="button">Back</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <?php if (!$_POST): ?>
             <form method="POST">
                 <?php echo Form::create()->of($entry)->show() ?>
                 <div class="row button-form">
