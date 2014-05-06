@@ -27,19 +27,7 @@ use \Xinix\Theme\NakedTheme\Helper\Form;
                 </div>
             </div>
         </div>
-        <!-- <form method="POST"> -->
-            <?php echo Form::create()->of($entry)->show(array( 'readonly' => true )) ?>
-            <!-- <div class="row button-form">
-                <div class="span-12">
-                    <div class="row">
-                        <ul class="flat">
-                            <li>
-                                <input type="submit" value="Save">
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> -->
-        <!-- </form> -->
+
+        <?php echo Form::create()->of($entry)->show(array( 'readonly' => true )) ?>
     </div>
 </div>
