@@ -16,7 +16,7 @@ use \Xinix\Theme\NakedTheme\Helper\Form;
                     <div class="row">
                         <ul class="flat">
                             <li>
-                                <a href="<?php echo @$_GET['continue'] ?: f('controller.url') ?>" class="button">Back</a>
+                                <a href="<?php echo f('controller.redirectUrl') ?>" class="button">Back</a>
                             </li>
                         </ul>
                     </div>
@@ -29,7 +29,7 @@ use \Xinix\Theme\NakedTheme\Helper\Form;
                     <div class="row">
                         <ul class="flat">
                             <li>
-                                <a href="<?php echo @$_GET['continue'] ?: f('controller.url') ?>" class="button">Back</a>
+                                <a href="<?php echo f('controller.redirectUrl') ?>" class="button">Back</a>
                             </li>
                         </ul>
                     </div>
