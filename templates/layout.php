@@ -24,7 +24,7 @@
                     <h6 class="label"><?php echo f('about', 'title') ?></h6>
                 </div>
                 <div class="span-2">
-                    &nbsp;
+                    <a href="#" class="icon-menu"></a>
                 </div>
             </div>
         </nav>

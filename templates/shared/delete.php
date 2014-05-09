@@ -7,7 +7,7 @@
                     <div class="row">
                         <ul class="flat">
                             <li>
-                                <a href="<?php echo f('controller.url') ?>" class="button">Back</a>
+                                <a href="<?php echo f('controller.redirectUrl') ?>" class="button">Back</a>
                             </li>
                         </ul>
                     </div>
@@ -26,7 +26,7 @@
                                     <input type="submit" value="OK">
                                 </li>
                                 <li>
-                                    <a href="<?php echo f('controller.url') ?>" class="button">Cancel</a>
+                                    <a href="<?php echo f('controller.redirectUrl') ?>" class="button">Cancel</a>
                                 </li>
                             </ul>
                         </div>

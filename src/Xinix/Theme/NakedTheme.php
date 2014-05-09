@@ -13,5 +13,7 @@ class NakedTheme extends Theme
 
         $d = explode(DIRECTORY_SEPARATOR.'src', __DIR__);
         $this->addBaseDirectory($d[0], 5);
+
+        $this->resolveAssetPath('vendor/img');
     }
 }
