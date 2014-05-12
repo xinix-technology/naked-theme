@@ -35,7 +35,7 @@ class Form
 
     public function show($options = array())
     {
-        $options = array_merge(array( 'readonly' => false ), $options);
+        $options = array_merge(array( 'preset' => 'input' ), $options);
 
         $html = '';
         $html = '<div class="form-input">';
@@ -44,7 +44,7 @@ class Form
             $html .= '<div class="span-12">'."\n";
             // $html .= '<div class="wrapper">'."\n";
             $html .= $this->label($key);
-            $html .= $options['readonly'] ? $this->readonly($key) : $this->input($key);
+            $html .= $this->render($options['preset'], $key);
             // $html .= '</div>'."\n\n";
             $html .= '</div>'."\n\n";
             $html .= '</div>'."\n\n";
@@ -58,13 +58,9 @@ class Form
         return $this->schema[$key]->label()."\n";
     }
 
-    public function input($key)
+    public function render($preset, $key)
     {
-        return $this->schema[$key]->input(@$this->data[$key])."\n";
-    }
-
-    public function readonly($key)
-    {
-        return $this->schema[$key]->set('readonly', true)->input(@$this->data[$key])."\n";
+        $value = isset($this->data[$key]) ? $this->data[$key] : '';
+        return $this->schema[$key]->render($preset, $value)."\n";
     }
 }

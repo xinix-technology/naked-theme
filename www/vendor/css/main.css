@@ -1,4 +1,16 @@
 /*body { background: #F8f8f8; }*/
+body > header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10000;
+}
+body > main {
+    padding-top: 49px;
+}
+.container {
+    padding-top: 10px;
+}
 a,
 input[type="submit"] {
     -webkit-transition: all .4s ease;
@@ -10,7 +22,11 @@ input[type="submit"] {
 .navbar { position: relative; display: table; width: 100%; background: #0096C9; border: 0; }
 .navbar a.back-button { color: #fff; font-weight: 400; padding: 4px 0px 4px 25px; }
 .navbar a.back-button:before {
-    border-color: #fff; border: 0; background: url(../img/home.png) 0 0 no-repeat; background-size: cover; width: 20px; height: 18px;  left: 0; top: 5px; margin-top: 0;
+    border-color: #fff;
+    border: 0;
+    background: url(../img/home.png) 0 0 no-repeat;
+    background-size: cover;
+    width: 20px; height: 18px;  left: 0; top: 5px; margin-top: 0;
     -webkit-transform: none;
     -moz-transform: none;
     -ms-transform: none;
@@ -21,7 +37,7 @@ input[type="submit"] {
 .navbar .icon-menu.icon-menu:after { border-top: 10px double #fff; border-bottom: 3px solid #fff; }
 .wrapper { padding: 0 10px; }
 /*select.role-select,*/
-span.field,
+/*span.field,*/
 input[type="text"],
 input[type="password"],
 input[type="date"] { height: 31px; }
