@@ -105,3 +105,11 @@ ul.listview .list-group li p .icon-checked { display: block; width: 20px; height
 .form-input input.span-6 { border-right: 1px solid #ddd; }
 .form-input input.span-6:last-child { border-right: 0; }
 .button-form { margin-bottom: 20px; }
+
+.pagination {
+    margin-bottom: 10px!important;
+}
+.pagination a {
+    width: 3rem;
+    text-align: center;
+}
