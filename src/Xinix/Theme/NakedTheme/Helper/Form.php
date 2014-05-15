@@ -35,7 +35,7 @@ class Form
 
     public function show($options = array())
     {
-        $options = array_merge(array( 'preset' => 'input' ), $options);
+        $options = array_merge(array( 'format' => 'input' ), $options);
 
         $html = '';
         $html = '<div class="form-input">';
@@ -44,7 +44,7 @@ class Form
             $html .= '<div class="span-12">'."\n";
             // $html .= '<div class="wrapper">'."\n";
             $html .= $this->label($key);
-            $html .= $this->render($options['preset'], $key);
+            $html .= $this->format($options['format'], $key);
             // $html .= '</div>'."\n\n";
             $html .= '</div>'."\n\n";
             $html .= '</div>'."\n\n";
@@ -58,9 +58,9 @@ class Form
         return $this->schema[$key]->label()."\n";
     }
 
-    public function render($preset, $key)
+    public function format($format, $key)
     {
         $value = isset($this->data[$key]) ? $this->data[$key] : '';
-        return $this->schema[$key]->render($preset, $value)."\n";
+        return $this->schema[$key]->format($format, $value)."\n";
     }
 }
