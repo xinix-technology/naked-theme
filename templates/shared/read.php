@@ -28,6 +28,6 @@ use \Xinix\Theme\NakedTheme\Helper\Form;
             </div>
         </div>
 
-        <?php echo Form::create()->of($entry)->show(array( 'preset' => 'readonly' )) ?>
+        <?php echo Form::create()->of($entry)->show(array( 'format' => 'readonly' )) ?>
     </div>
 </div>
