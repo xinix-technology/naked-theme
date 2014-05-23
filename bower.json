@@ -1,0 +1,19 @@
+{
+  "name": "naked-theme",
+  "version": "0.0.1",
+  "homepage": "https://github.com/aliaraaab/naked-theme",
+  "authors": [
+    "Muhammad Ali Alaydrus <muhammadali.alaydrus@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "naked-theme",
+  "version": "0.0.0",
+  "description": "naked-theme ===========",
+  "main": "paxfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aliaraaab/naked-theme.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/aliaraaab/naked-theme/issues"
+  },
+  "devDependencies": {
+    "pax-php": "^0.1.0"
+  }
+}
