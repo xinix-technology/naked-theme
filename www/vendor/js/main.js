@@ -8,6 +8,11 @@ $(document).on('click', '.alert p',function() {
 });
 
 $(function() {
+    $('a').click(function() {
+        document.location = $(this).attr('href');
+        return false;
+    });
+
     if (window.innerWidth >= 768) {
         var $options = $('.nav-mobile .select-button > option');
         if ($options.length) {

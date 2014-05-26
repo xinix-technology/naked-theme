@@ -150,6 +150,7 @@ ul.listview .list-group li p .icon-checked { display: block; width: 20px; height
 .listing .nav-area ul.flat li a.active { border: 1px solid #0096C9; background: #0096C9; color: #fff; cursor: default; }
 
 .form-input { margin: 10px 0; }
+.form-input p { font-size: 0.8em; }
 .form-input input.span-6 { border-right: 1px solid #ddd; }
 .form-input input.span-6:last-child { border-right: 0; }
 .button-form { margin-bottom: 20px; }

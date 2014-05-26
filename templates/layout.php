@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> <?php echo f('about', 'title') ?></title>
+    <title><?php echo f('page.title') ?></title>
 
     <script src="<?php echo Theme::base('vendor/jquery/jquery.js') ?>"></script>
     <script src="<?php echo Theme::base('vendor/js/main.js') ?>"></script>
 
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo Theme::base('vendor/img/apple-touch-icon-114x114.png') ?>" />
     <link rel="stylesheet" href="<?php echo Theme::base('vendor/css/naked.min.css') ?>">
     <link rel="stylesheet" href="<?php echo Theme::base('vendor/css/main.css') ?>">
 
@@ -19,7 +20,7 @@
         <nav class="navbar">
             <div class="row">
                 <div class="span-2">
-                    <a class="back-button" href="<?php echo URL::base() ?>">Home</a>
+                    <a class="back-button" href="<?php echo URL::base() ?>"></a>
                 </div>
                 <div class="span-8">
                     <h6 class="label title"><?php echo f('page.header', 'Bono Application') ?></h6>
