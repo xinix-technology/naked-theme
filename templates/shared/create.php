@@ -11,7 +11,7 @@ use \Xinix\Theme\NakedTheme\Helper\Form;
     </div>
 
     <div class="list-form">
-        <?php if ($app->request->isGet()): ?>
+        <?php // if ($app->request->isGet()): ?>
         <form method="POST">
             <?php echo Form::create()->of($entry)->show() ?>
             <div class="row button-form">
@@ -26,6 +26,6 @@ use \Xinix\Theme\NakedTheme\Helper\Form;
                 </div>
             </div>
         </form>
-        <?php endif ?>
+        <?php // endif ?>
     </div>
 </div>
