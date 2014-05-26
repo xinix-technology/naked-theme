@@ -1,8 +1,3 @@
-<script type="text/javascript">
-    $(".alert p").click(function() {
-        $(this).addClass("hide");
-    });
-</script>
 <div id="login-pane">
    <div id="login">
       <div class="title">

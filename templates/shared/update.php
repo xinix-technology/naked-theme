@@ -2,11 +2,6 @@
 use \Xinix\Theme\NakedTheme\Helper\Form;
 ?>
 
-<script type="text/javascript">
-    $(".alert p").click(function() {
-        $(this).addClass("hide");
-    });
-</script>
 <div class="listing">
     <div class="nav-area hidden-mobile">
         <div class="wrapper">

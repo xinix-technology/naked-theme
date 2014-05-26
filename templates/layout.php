@@ -13,6 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <script type="text/javascript">
+        $(document).on('click', ".alert p",function() {
+            $(this).addClass("hide");
+        });
+    </script>
 </head>
 <body>
     <header>
