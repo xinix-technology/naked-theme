@@ -14,7 +14,7 @@
                         <?php foreach($entries as $entry): ?>
                             <li class="plain">
                                 <a href="<?php echo f('controller.url', '/'.$entry['$id']) ?>">
-                                    <?php echo $entry[key($entry->collection->schema())] ?>
+                                    <?php echo reset($entry->collection->schema())->format('plain', $entry[key($entry->collection->schema())], $entry) ?>
                                 </a>
                             </li>
                         <?php endforeach ?>
