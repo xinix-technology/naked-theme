@@ -3,16 +3,16 @@ $(document).on('change', '.select-button', function() {
     window.location.href = href;
 });
 
+$(document).on('click', 'a', function() {
+    document.location = $(this).attr('href');
+    return false;
+});
+
 $(document).on('click', '.alert p',function() {
     $(this).addClass("hide");
 });
 
 $(function() {
-    $('a').click(function() {
-        document.location = $(this).attr('href');
-        return false;
-    });
-
     if (window.innerWidth >= 768) {
         var $options = $('.nav-mobile .select-button > option');
         if ($options.length) {
