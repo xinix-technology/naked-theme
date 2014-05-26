@@ -16,7 +16,14 @@ $(function() {
     if (window.innerWidth >= 768) {
         var $options = $('.nav-mobile .select-button > option');
         if ($options.length) {
-            var $menu = $('<div class="nav-area hidden-mobile"><div class="wrapper"><div class="row button-form"><div class="span-12"><div class="row"><ul class="flat"></ul></div></div></div></div></div>');
+            var $nav = $('.nav-area');
+            if (!$nav.length) {
+                $nav = $('<div class="nav-area hidden-mobile"><div class="wrapper"></div></div>');
+                $('.nav-mobile').before($nav);
+            }
+            var $menu = $('<div class="row button-form"><div class="span-12"><div class="row"><ul class="flat"></ul></div></div></div>');
+            $nav.find('>.wrapper').append($menu);
+
             var $ul = $menu.find('ul.flat');
 
             $options.each(function() {
@@ -28,7 +35,6 @@ $(function() {
                     $ul.append('<li><a href="' + $this.attr('data-url') + '" class="button ' + ($this.attr('selected') ? 'active' : '') + '">' + $this.html() + '</a></li>');
                 }
             });
-            $('.nav-mobile').before($menu);
         }
     }
 });
