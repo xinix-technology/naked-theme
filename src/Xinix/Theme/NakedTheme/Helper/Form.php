@@ -40,6 +40,9 @@ class Form
         $html = '';
         $html = '<div class="form-input">';
         foreach ($this->schema as $key => $field) {
+            if ($field['hidden']) {
+                continue;
+            }
             $html .= '<div class="row field field-'.$key.'">'."\n";
             $html .= '<div class="span-12">'."\n";
             // $html .= '<div class="wrapper">'."\n";
