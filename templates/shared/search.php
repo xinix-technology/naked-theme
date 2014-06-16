@@ -2,7 +2,9 @@
     <div class="nav-mobile hidden-desktop">
         <select class="select-button">
             <option data-url="<?php echo f('controller.redirectUrl') ?>" selected>Search</option>
+            <?php if (f('auth.allowed', f('controller.uri', '/null/create'))): ?>
             <option data-url="<?php echo f('controller.url', '/null/create') ?>">Create</option>
+            <?php endif ?>
         </select>
     </div>
     <div class="list-user">
@@ -10,12 +12,12 @@
             <ul class="listview">
                 <li class="list-group-container">
                     <ul class="list-group">
-                        <?php if ($entries->count()): ?>
+                        <?php if (count($entries)): ?>
                         <?php foreach($entries as $entry): ?>
                             <li class="plain">
                                 <a href="<?php echo f('controller.url', '/'.$entry['$id']) ?>">
-                                    <?php $schema = $entry->collection->schema(); ?>
-                                    <?php echo reset($schema)->format('plain', $entry[key($schema)], $entry) ?>
+                                    <?php $schema = $app->controller->schema(); ?>
+                                    <?php echo reset($schema)->format('plain', @$entry[key($schema)], $entry) ?: '&lt;no identifier&gt;' ?>
                                 </a>
                             </li>
                         <?php endforeach ?>

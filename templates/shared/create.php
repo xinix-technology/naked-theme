@@ -6,14 +6,15 @@ use \Xinix\Theme\NakedTheme\Helper\Form;
     <div class="nav-mobile hidden-desktop">
         <select class="select-button">
             <option data-url="<?php echo f('controller.redirectUrl') ?>">Search</option>
+            <?php if (f('auth.allowed', f('controller.uri', '/null/create'))): ?>
             <option data-url="<?php echo f('controller.url', '/null/create') ?>" selected>Create</option>
+            <?php endif ?>
         </select>
     </div>
-
     <div class="list-form">
         <?php // if ($app->request->isGet()): ?>
         <form method="POST">
-            <?php echo Form::create()->of($entry)->show() ?>
+            <?php echo Form::create($app->controller->schema())->of(@$entry)->show() ?>
             <div class="row button-form">
                 <div class="span-12">
                     <div class="row">

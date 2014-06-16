@@ -2,15 +2,22 @@
     <div class="nav-mobile hidden-desktop">
         <select class="select-button">
             <option data-url="<?php echo f('controller.redirectUrl') ?>">Search</option>
+            <?php if (f('auth.allowed', f('controller.uri', '/null/create'))): ?>
             <option data-url="<?php echo f('controller.url', '/null/create') ?>">Create</option>
-            <option data-url="<?php echo f('controller.url', '/'.\URL::parameter('id')) ?>">Read</option>
-            <option data-url="<?php echo f('controller.url', '/'.\URL::parameter('id').'/update') ?>">Update</option>
-            <option data-url="<?php echo f('controller.url', '/'.\URL::parameter('id').'/delete') ?>" selected>Delete</option>
+            <?php endif ?>
+            <?php if (f('auth.allowed', f('controller.uri', '/'.$entry['$id']))): ?>
+            <option data-url="<?php echo f('controller.url', '/'.$entry['$id']) ?>">Read</option>
+            <?php endif ?>
+            <?php if (f('auth.allowed', f('controller.uri', '/'.$entry['$id'].'/update'))): ?>
+            <option data-url="<?php echo f('controller.url', '/'.$entry['$id'].'/update') ?>">Update</option>
+            <?php endif ?>
+            <?php if (f('auth.allowed', f('controller.uri', '/'.$entry['$id'].'/delete'))): ?>
+            <option data-url="<?php echo f('controller.url', '/'.$entry['$id'].'/delete') ?>" selected>Delete</option>
+            <?php endif ?>
         </select>
     </div>
     <div class="list-form">
         <?php if ($_POST): ?>
-            <!-- <h4><?php echo 'Delete '.f('controller.name').' ('.count($ids).' entries)' ?></h4> -->
             <div class="row button-form">
                 <div class="span-12">
                     <div class="row">
@@ -23,9 +30,9 @@
                 </div>
             </div>
         <?php else: ?>
-            <!-- <h4><?php echo 'Delete '.f('controller.name') ?></h4> -->
+            <?php $id = explode(',', \URL::parameter('id')) ?>
             <form method="POST">
-                <p>Are you sure want to delete <?php echo count($ids).' entries' ?>?</p>
+                <p>Are you sure want to delete <?php echo @count($id).' entries' ?>?</p>
                 <input type="hidden" name="confirm" value="1">
                 <div class="row button-form">
                     <div class="span-12">
