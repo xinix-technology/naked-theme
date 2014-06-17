@@ -5,14 +5,14 @@
             <?php if (f('auth.allowed', f('controller.uri', '/null/create'))): ?>
             <option data-url="<?php echo f('controller.url', '/null/create') ?>">Create</option>
             <?php endif ?>
-            <?php if (f('auth.allowed', f('controller.uri', '/'.$entry['$id']))): ?>
-            <option data-url="<?php echo f('controller.url', '/'.$entry['$id']) ?>">Read</option>
+            <?php if (f('auth.allowed', f('controller.uri', '/'.\URL::parameter('id')))): ?>
+            <option data-url="<?php echo f('controller.url', '/'.\URL::parameter('id')) ?>">Read</option>
             <?php endif ?>
-            <?php if (f('auth.allowed', f('controller.uri', '/'.$entry['$id'].'/update'))): ?>
-            <option data-url="<?php echo f('controller.url', '/'.$entry['$id'].'/update') ?>">Update</option>
+            <?php if (f('auth.allowed', f('controller.uri', '/'.\URL::parameter('id').'/update'))): ?>
+            <option data-url="<?php echo f('controller.url', '/'.\URL::parameter('id').'/update') ?>">Update</option>
             <?php endif ?>
-            <?php if (f('auth.allowed', f('controller.uri', '/'.$entry['$id'].'/delete'))): ?>
-            <option data-url="<?php echo f('controller.url', '/'.$entry['$id'].'/delete') ?>" selected>Delete</option>
+            <?php if (f('auth.allowed', f('controller.uri', '/'.\URL::parameter('id').'/delete'))): ?>
+            <option data-url="<?php echo f('controller.url', '/'.\URL::parameter('id').'/delete') ?>" selected>Delete</option>
             <?php endif ?>
         </select>
     </div>
