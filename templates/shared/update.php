@@ -21,7 +21,7 @@ use \Xinix\Theme\NakedTheme\Helper\Form;
         </select>
     </div>
     <div class="list-form">
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <?php echo Form::create($app->controller->schema())->of($entry)->show() ?>
             <div class="row button-form">
                 <div class="span-12">
