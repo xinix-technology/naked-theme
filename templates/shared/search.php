@@ -16,8 +16,7 @@
                         <?php foreach($entries as $entry): ?>
                             <li class="plain">
                                 <a href="<?php echo f('controller.url', '/'.$entry['$id']) ?>">
-                                    <?php $schema = $app->controller->schema(); ?>
-                                    <?php echo reset($schema)->format('plain', @$entry[key($schema)], $entry) ?: '&lt;no identifier&gt;' ?>
+                                    <?php echo $entry->format() ?>
                                 </a>
                             </li>
                         <?php endforeach ?>
