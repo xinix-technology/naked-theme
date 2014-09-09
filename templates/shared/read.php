@@ -5,7 +5,9 @@ use \Xinix\Theme\NakedTheme\Helper\Form;
 <div class="listing">
     <div class="nav-mobile hidden-desktop">
         <select class="select-button">
-            <option data-url="<?php echo f('controller.redirectUrl') ?>">Search</option>
+            <?php if (f('auth.allowed', f('controller.uri'))): ?>
+            <option data-url="<?php echo f('controller.uri') ?>">Search</option>
+            <?php endif ?>
             <?php if (f('auth.allowed', f('controller.uri', '/null/create'))): ?>
             <option data-url="<?php echo f('controller.url', '/null/create') ?>">Create</option>
             <?php endif ?>

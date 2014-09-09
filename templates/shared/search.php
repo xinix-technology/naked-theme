@@ -1,7 +1,9 @@
 <div class="listing">
     <div class="nav-mobile hidden-desktop">
         <select class="select-button">
-            <option data-url="<?php echo f('controller.redirectUrl') ?>" selected>Search</option>
+            <?php if (f('auth.allowed', f('controller.uri'))): ?>
+            <option data-url="<?php echo f('controller.uri') ?>" selected>Search</option>
+            <?php endif ?>
             <?php if (f('auth.allowed', f('controller.uri', '/null/create'))): ?>
             <option data-url="<?php echo f('controller.url', '/null/create') ?>">Create</option>
             <?php endif ?>
