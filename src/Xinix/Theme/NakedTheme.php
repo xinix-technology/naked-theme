@@ -24,7 +24,7 @@ class NakedTheme extends Theme
 
         $app->filter('page.title', function ($key) use ($app, $appConfig) {
             if (isset($app->controller)) {
-                $module = Inflector::humanize($app->controller->clazz);
+                $module = Inflector::humanize($app->controller->getClass());
                 return $key .' - '. $module;
             }
             return $key;
@@ -39,7 +39,7 @@ class NakedTheme extends Theme
 
         $app->filter('page.subheader', function ($key) use ($app, $appConfig) {
             if (isset($app->controller)) {
-                return Inflector::humanize($app->controller->clazz);
+                return Inflector::humanize($app->controller->getClass());
             }
             if (isset($appConfig['subtitle'])) {
                 return $appConfig['subtitle'];
